@@ -1,5 +1,7 @@
 require("dotenv").config({ path: "./.env.production" });
 
+const cors = require("cors");
+
 //const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -50,7 +52,7 @@ Department.belongsTo(School, { foreignKey: 'schoolId' });
 
 const app = express();
 
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

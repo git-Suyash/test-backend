@@ -52,7 +52,12 @@ Department.belongsTo(School, { foreignKey: 'schoolId' });
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: "https://test-frontend-teal-six.vercel.app/",
+    optionsSuccessStatus:200
+  }
+));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -101,7 +101,7 @@ sequelize
 //   //   })
   .then(() => {
     console.log("Database Connected");
-    app.listen(process.env.PORT);
+    app.listen(3000);
     console.log("Application Server Running");
 
 })

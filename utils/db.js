@@ -2,12 +2,13 @@ require("dotenv").config({ path: "./.env.production" });
 
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
+const sequelize = new Sequelize({
+  database : "verceldb",
+  user : "default",
+  password : "TdP9njw6IZyX"
+},
   {
-    host: process.env.DB_HOST,
+    host: "ep-nameless-poetry-a12z08fl-pooler.ap-southeast-1.aws.neon.tech",
     //Todo: Uncomment in production
     dialectOptions: {
       ssl: {

@@ -2,13 +2,9 @@ require("dotenv").config({ path: "./.env.production" });
 
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize({
-  database : "verceldb",
-  user : "default",
-  password : "TdP9njw6IZyX"
-},
+const sequelize = new Sequelize("postgres://default:TdP9njw6IZyX@ep-nameless-poetry-a12z08fl.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require"
+,
   {
-    host: "ep-nameless-poetry-a12z08fl-pooler.ap-southeast-1.aws.neon.tech",
     //Todo: Uncomment in production
     dialectOptions: {
       ssl: {
